@@ -8,6 +8,7 @@ Encrypt files locally on the mac with 7-zip. The following is a python wrapper a
   - Verify the password is entered in properly during encryption using multiple entries.
   - Clearly denote encrypted files with `ENCRYPTED` being added to the file name. Also increment the file names incase of duplicates.   
   - Password entry is in python programs stdin (not in command line which has history), and is visibly hidden during entry. 
+  - Unlike other tools, everything is open source! 7-zip, the packages, this code!
 
 ### Setup 
 1) Go to the official 7-zip website, download the execuatable. Or use homebrew to install 7-zip.  
