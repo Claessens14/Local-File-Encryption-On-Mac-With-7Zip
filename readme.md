@@ -29,7 +29,32 @@ python encrypt.py {optional file/folder name}
 Decryption:  
 ```
 python decrypt.py {optional file/folder name}
+
 ```
+### Recommendation
+Test out the functionality on test files prior to running on important files.   
+
+### Optional 
+Add the encryption functionality to your `~/.zshrc` file so you can access it it anytime. 
+```
+encrypt() {
+    python {GLOBAL PATH TO DIRECTORY}/7zip_method/encrypt.py "$@"
+}
+decrypt() {
+    python {GLOBAL PATH TO DIRECTORY}/7zip_method/decrypt.py "$@"
+}
+```
+Then run:  
+```
+source ~/.zshrc
+```
+Now you can type the following in your shell to access the encryption functionality
+```
+encrypt
+  OR 
+decrypt
+```
+
 ### Notes
 Several functions were written by chatGPT.   
 
