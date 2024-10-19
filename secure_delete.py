@@ -44,7 +44,3 @@ def secure_delete_path(path):
     else:
         print(f"Path not found: {path}")
 
-# Usage
-#folder_to_delete = "/path/to/your/folder"  # Change this to your target folder
-#secure_delete_folder(folder_to_delete)
-

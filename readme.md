@@ -30,4 +30,7 @@ Decryption:
 ```
 python decrypt.py {optional file/folder name}
 ```
+### Notes
+Several functions were written by chatGPT.   
 
+In general if you see an issue or area improvement, email me (found on profile page)
