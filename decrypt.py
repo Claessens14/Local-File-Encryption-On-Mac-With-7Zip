@@ -3,6 +3,7 @@ import os
 import subprocess
 import secure_delete
 import shutil
+import getpass
 print("---------- DECRYPTION -----------")
 
 target_file = ""
@@ -16,7 +17,7 @@ if os.path.exists(target_file) == False:
     print(f"The file or folder '{target_file}' does not exist.")
     exit()
 
-password = input("Enter your password: ")
+password = getpass.getpass("Enter your password: ")
 
 
 # Construct the command
@@ -59,7 +60,6 @@ def remove_encrypted(filename):
         new_filename = f"{new_base}_{counter}{ext}"
         counter += 1
     return new_filename
-import ipdb; ipdb.set_trace()
 # remove the word ENCRYPTED from the output file
 destination = remove_encrypted(decrypted_file_name)
 

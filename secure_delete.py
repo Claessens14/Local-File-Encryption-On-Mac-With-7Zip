@@ -37,7 +37,6 @@ def secure_delete_folder(folder_path):
 
 def secure_delete_path(path):
     """Determine if the path is a file or folder and securely delete it."""
-    import ipdb; ipdb.set_trace()
     if os.path.isfile(path):
         secure_delete(path)
     elif os.path.isdir(path):

@@ -2,6 +2,7 @@ import sys
 import os
 import subprocess
 import secure_delete
+import getpass
 
 print("---------- ENCRYPTION -----------")
 
@@ -39,12 +40,12 @@ if os.path.exists(destination):
     exit()
 
 # Get the password
-password = input("Enter your password: ")
-verification2 = input("(2nd Entry) Verify the correct spelling: ")
+password = getpass.getpass("Enter your password: ")
+verification2 = getpass.getpass("(2nd Entry) Verify the correct spelling: ")
 if verification2 != password:
     print("\n\n Passwords do not match! Exiting Program\n\n")
     exit()
-verification3 = input("(3rd Entry) Verify the correct spelling: ")
+verification3 = getpass.getpass("(3rd Entry) Verify the correct spelling: ")
 if verification3 != password:
     print("\n\n Passwords (3rd Entry) do not match! Exiting Program\n\n")
     exit()
