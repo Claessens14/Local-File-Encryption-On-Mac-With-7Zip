@@ -4,6 +4,8 @@ import subprocess
 import secure_delete
 import shutil
 import getpass
+from dotenv import load_dotenv
+load_dotenv()
 print("---------- DECRYPTION -----------")
 
 target_file = ""
@@ -21,7 +23,7 @@ password = getpass.getpass("Enter your password: ")
 
 
 # Construct the command
-seven_zip_path = "/Users/jacobclaessens/Desktop/code/utils/7z2408-mac/7zz"
+seven_zip_path = os.getenv("SEVEN_ZIP_PATH")
 command = f"{seven_zip_path} x -p{password} {target_file}"
 
 # Execute the command

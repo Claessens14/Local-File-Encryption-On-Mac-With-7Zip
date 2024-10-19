@@ -3,6 +3,8 @@ import os
 import subprocess
 import secure_delete
 import getpass
+from dotenv import load_dotenv
+load_dotenv()
 
 print("---------- ENCRYPTION -----------")
 
@@ -51,7 +53,7 @@ if verification3 != password:
     exit()
 
 # Run 7-zip
-seven_zip_path = "/Users/jacobclaessens/Desktop/code/utils/7z2408-mac/7zz"
+seven_zip_path = os.getenv("SEVEN_ZIP_PATH")
 command = f"{seven_zip_path} a -t7z -mhe=on  -p{password} {destination} {target_file}"
 print(command)
 try:
