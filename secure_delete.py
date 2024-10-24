@@ -1,6 +1,8 @@
 import os
 import random
 import shutil
+import subprocess
+from pathlib import Path
 
 
 def secure_delete(file_path):
@@ -64,8 +66,8 @@ def secure_delete_folder(folder_path):
                     except OSError:
                         # If regular removal fails, try with sudo
                         try:
-                            subprocess.run(f"sudo rm -d {item}", shell=True, check=True)
-                            print(f"Removed empty directory with elevated privileges: {item}")
+                            subprocess.run(f"sudo rm -rf {item}", shell=True, check=True)
+                            print(f"Removed directory with elevated privileges: {item}")
                         except subprocess.CalledProcessError as e:
                             print(f"Error removing directory {item} with elevated privileges: {str(e)}")
 
@@ -76,7 +78,7 @@ def secure_delete_folder(folder_path):
             except OSError:
                 # If regular removal fails, try with sudo
                 try:
-                    subprocess.run(f"sudo rm -d {folder_path}", shell=True, check=True)
+                    subprocess.run(f"sudo rm -rf {folder_path}", shell=True, check=True)
                     print(f"Removed root directory with elevated privileges: {folder_path}")
                 except subprocess.CalledProcessError as e:
                     print(f"Error removing root directory {folder_path} with elevated privileges: {str(e)}")
@@ -88,6 +90,7 @@ def secure_delete_folder(folder_path):
                 print(f"Removed directory tree with elevated privileges: {folder_path}")
             except subprocess.CalledProcessError as e:
                 print(f"Fatal error processing folder {folder_path}: {str(e)}")
+
 
 def secure_delete_path(path):
     """Determine if the path is a file or folder and securely delete it."""

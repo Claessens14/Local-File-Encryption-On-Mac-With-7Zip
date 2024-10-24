@@ -54,7 +54,7 @@ if verification3 != password:
 
 # Run 7-zip
 seven_zip_path = os.getenv("SEVEN_ZIP_PATH")
-command = f"{seven_zip_path} a -t7z -mhe=on  -p{password} {destination} {target_file}"
+command = f"sudo {seven_zip_path} a -t7z -mhe=on  -p{password} {destination} {target_file}"
 print(command)
 try:
     result = subprocess.run(command, shell=True, check=True, text=True, capture_output=True)
