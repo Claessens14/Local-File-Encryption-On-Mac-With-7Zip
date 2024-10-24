@@ -28,11 +28,12 @@ command = f"{seven_zip_path} x -p{password} {target_file}"
 
 # Execute the command
 try:
-    result = subprocess.run(command, shell=True, check=True, text=True, capture_output=True)
+    result = subprocess.run(command, shell=True, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     print("\n\n   7-zip executed successfully!\n\n")
-    print("     7-zip Output:", result.stdout + "\n")
+    #print("     7-zip Output:", result.stdout + "\n")
 except subprocess.CalledProcessError as e:
-    print("An error occurred:", e.stderr)
+    #print("An error occurred:", e.stderr)
+    print("Turn on Erorr for the 7zip command to see the issue"0
     print("\n\nExiting Program\n\n")
     exit()
 
