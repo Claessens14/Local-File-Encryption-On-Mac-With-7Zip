@@ -33,7 +33,7 @@ try:
     #print("     7-zip Output:", result.stdout + "\n")
 except subprocess.CalledProcessError as e:
     #print("An error occurred:", e.stderr)
-    print("Turn on Erorr for the 7zip command to see the issue"0
+    print("Turn on Erorr for the 7zip command to see the issue")
     print("\n\nExiting Program\n\n")
     exit()
 
